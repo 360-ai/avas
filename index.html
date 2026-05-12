@@ -1133,6 +1133,7 @@
       .services-bar { grid-template-columns: repeat(4, 1fr); }
       .photo-split { grid-template-columns: 1fr; gap: 40px; }
       .photo-split.reverse { direction: ltr; }
+      .photo-split.reverse > *:last-child { order: -1; }
       #kontakt { grid-template-columns: 1fr; gap: 48px; }
       .panne-grid { grid-template-columns: repeat(2, 1fr); }
       .mietwagen-header { grid-template-columns: 1fr; gap: 28px; }
@@ -1151,6 +1152,7 @@
     }
 
     @media (max-width: 640px) {
+      #pannenhilfe .photo-frame { max-height: 280px; }
       .services-bar { grid-template-columns: 1fr 1fr; }
       .panne-grid { grid-template-columns: 1fr; }
       .car-grid { grid-template-columns: 1fr; }
@@ -1520,7 +1522,7 @@
 
 <!-- PANNENHILFE -->
 <section id="pannenhilfe">
-  <div class="photo-split">
+  <div class="photo-split" style="grid-template-columns: 0.7fr 1.3fr;">
     <div class="photo-frame aspect-3-4">
       <img src="images/Pannenwagen.jpeg" alt="AVAS Pannenwagen – Soforthilfe vor Ort" loading="lazy" width="800" height="1067">
     </div>
@@ -1688,7 +1690,7 @@
       </div>
       <div class="fp-info">
         <div class="fp-name">Abschleppwagen</div>
-        <div class="fp-desc">Mit Plattform und Seilwinde. Für die Bergung und den Transport aller PKW-Klassen.</div>
+        <div class="fp-desc">Mit Plattform, Kran und Seilwinde. Für die Bergung und den Transport aller PKW-Klassen.</div>
       </div>
     </div>
     <div class="fp-card">
