@@ -859,9 +859,28 @@
       border-radius: 99px;
     }
     @media(max-width:768px) {
-      .gallery-strip { height: 200px; gap: 2px; }
-      .gallery-strip:hover .g-cell { flex: 0.3; }
-      .gallery-strip:hover .g-cell:hover { flex: 3; }
+      .gallery-strip {
+        height: 260px;
+        gap: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+      }
+      .gallery-strip::-webkit-scrollbar { display: none; }
+      .g-cell {
+        flex: 0 0 78vw;
+        scroll-snap-align: start;
+        border-radius: 6px;
+        transition: none;
+      }
+      /* Hover-Expand auf Touch deaktivieren */
+      .gallery-strip:hover .g-cell { flex: 0 0 78vw; }
+      .gallery-strip:hover .g-cell:hover { flex: 0 0 78vw; }
+      /* Overlay immer leicht sichtbar auf Touch */
+      .g-cell .g-overlay { opacity: 1; background: rgba(20,18,16,0.2); }
     }
 
     /* ── PARTNER LAUFBAND ── */
