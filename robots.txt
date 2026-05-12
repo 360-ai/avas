@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+Disallow: /design_handoff_avas_onepager/
+
+# AI-Crawler explizit erlauben (GEO – Sichtbarkeit in AI-Suche)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.avas-frankenberg.de/sitemap.xml
