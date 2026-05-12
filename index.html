@@ -775,13 +775,14 @@
       width: 100%;
     }
     .g-cell {
-      flex: 1;
+      flex: 0.4;
       overflow: hidden;
       position: relative;
       cursor: pointer;
       border-radius: 4px;
       transition: flex 0.5s cubic-bezier(0.4,0,0.2,1);
     }
+    .g-cell:first-child { flex: 2.8; }
     .gallery-strip:hover .g-cell { flex: 0.4; }
     .gallery-strip:hover .g-cell:hover { flex: 2.8; }
     .g-cell img {
