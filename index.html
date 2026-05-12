@@ -590,6 +590,9 @@
     .panne-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+    }
+    .panne-grid--2col {
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
     }
@@ -599,6 +602,8 @@
       transition: background 0.2s;
       position: relative;
       overflow: hidden;
+      overflow-wrap: break-word;
+      word-break: break-word;
     }
     .panne-card::before {
       content: '';
@@ -1152,7 +1157,15 @@
     }
 
     @media (max-width: 640px) {
-      .services-bar { grid-template-columns: 1fr 1fr; }
+      .services-bar {
+        grid-template-columns: 1fr 1fr;
+        margin-left: -28px;
+        margin-right: -28px;
+      }
+      .service-item { padding: 24px 16px; }
+      .panne-grid--2col { grid-template-columns: repeat(2, 1fr); }
+      .panne-card { padding: 24px 14px; }
+      .panne-title { font-size: 1.15rem; }
       .panne-grid { grid-template-columns: 1fr; }
       .car-grid { grid-template-columns: 1fr; }
       .fuhrpark-grid { grid-template-columns: 1fr; }
@@ -1534,7 +1547,7 @@
       <p class="sec-body">
         Nicht jede Panne braucht einen Abschleppwagen. Oft sind wir direkt am Fahrzeug schneller.
       </p>
-      <div class="panne-grid" style="margin-top:36px; grid-template-columns: repeat(2, 1fr);">
+      <div class="panne-grid panne-grid--2col" style="margin-top:36px;">
         <div class="panne-card">
           <div class="panne-num">01</div>
           <div class="panne-title">Starthilfe</div>
