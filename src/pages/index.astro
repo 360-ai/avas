@@ -1,0 +1,2148 @@
+---
+// Storyblok-Daten werden hier später geladen
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- TODO: Domain-Platzhalter "https://www.avas-frankenberg.de" vor Hosting durch echte Domain ersetzen -->
+
+  <!-- Primäre Meta Tags -->
+  <title>AVAS Frankenberg – Abschleppdienst, Pannenhilfe &amp; Autovermietung 24/7</title>
+  <meta name="description" content="AVAS Frankenberg: 24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe &amp; Mietwagen (SEAT, Renault). Ralf Schmidt, Berleburger Str. 12, 35066 Frankenberg. ☎ 06451 / 24770">
+  <meta name="keywords" content="Abschleppdienst Frankenberg, Pannenhilfe Frankenberg, Autovermietung Frankenberg Eder, LKW Bergung Hessen, Abschleppservice 24h, Pannendienst Waldeck-Frankenberg, AVAS Ralf Schmidt">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="AVAS – Ralf Schmidt, Frankenberg">
+  <link rel="canonical" href="https://www.avas-frankenberg.de/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AVAS Frankenberg – Abschleppdienst &amp; Autovermietung 24/7">
+  <meta property="og:description" content="24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe &amp; Mietwagen in Frankenberg (Eder). Ralf Schmidt. ☎ 06451 / 24770">
+  <meta property="og:url" content="https://www.avas-frankenberg.de/">
+  <meta property="og:image" content="https://www.avas-frankenberg.de/design_handoff_avas_onepager/uploads/1483036116-d8321340.jpg">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="AVAS Frankenberg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AVAS Frankenberg – Abschleppdienst &amp; Autovermietung 24/7">
+  <meta name="twitter:description" content="24/7 Pannenhilfe &amp; Abschleppservice in Frankenberg (Eder). ☎ 06451 / 24770">
+  <meta name="twitter:image" content="https://www.avas-frankenberg.de/design_handoff_avas_onepager/uploads/1483036116-d8321340.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/images/avas logo.png" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/images/avas logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- GA4 (TODO: G-XXXXXXXXXX durch echte Measurement ID ersetzen + Cookie-Banner ergänzen)
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red:        #d01010;
+      --red-bright: #e81818;
+      --red-dim:    #991010;
+      --yellow:     #f5c800;
+      --yellow-dim: #c9a400;
+      --black:      #141210;
+      --surface:    #1e1c19;
+      --surface2:   #282520;
+      --surface3:   #332f28;
+      --border:     rgba(255,255,255,0.09);
+      --text:       #f2ede6;
+      --text-muted: rgba(242,237,230,0.52);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── SCROLL PROGRESS ── */
+    #scroll-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--yellow));
+      z-index: 200;
+      transition: width 0.1s linear;
+      width: 0;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 3px; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      height: 68px;
+      background: rgba(20,18,16,0.94);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo-img {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-logo-img img {
+      height: 58px;
+      width: auto;
+      object-fit: contain;
+      transition: opacity 0.2s;
+    }
+    .nav-logo-img:hover img { opacity: 0.85; }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .emergency-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--red);
+      padding: 7px 16px;
+      border-radius: 2px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #fff;
+      transition: background 0.2s;
+    }
+    .emergency-badge:hover { background: var(--red-bright); }
+
+    .pulse-dot {
+      width: 7px; height: 7px;
+      background: #fff;
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.65); }
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px; height: 2px;
+      background: var(--text);
+      border-radius: 1px;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 56px 88px;
+      padding-top: 71px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-image: url('design_handoff_avas_onepager/uploads/hero.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      filter: brightness(0.42) saturate(0.75);
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(20,18,16,0.15) 0%,
+        rgba(20,18,16,0.55) 55%,
+        rgba(20,18,16,0.97) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .hero-eyebrow-line {
+      width: 36px; height: 2px;
+      background: var(--yellow);
+    }
+    .hero-eyebrow-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    .hero-h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(5rem, 10.5vw, 10rem);
+      line-height: 0.9;
+      letter-spacing: 0.02em;
+      margin-bottom: 28px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--red);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 460px;
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 44px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 15px 34px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--red-bright); transform: translateY(-1px); }
+
+    .btn-instagram {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: opacity 0.2s, transform 0.15s;
+    }
+    .btn-instagram:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border: 1px solid rgba(255,255,255,0.2);
+      cursor: pointer;
+      border-radius: 2px;
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--yellow); color: var(--yellow); }
+
+    .hero-stats {
+      position: absolute;
+      right: 56px;
+      bottom: 88px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+    }
+    .stat { text-align: right; }
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--yellow);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .stat-divider {
+      width: 1px; height: 36px;
+      background: rgba(255,255,255,0.12);
+    }
+
+    /* ── STRIP ── */
+    .strip {
+      background: var(--red);
+      padding: 13px 0;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .strip-inner {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      white-space: nowrap;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.73rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      animation: marquee-strip 45s linear infinite;
+    }
+    @keyframes marquee-strip {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .strip-dot {
+      width: 5px; height: 5px;
+      background: rgba(255,255,255,0.4);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── SECTIONS COMMON ── */
+    section { padding: 96px 56px; }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .eyebrow-line {
+      width: 28px; height: 2px;
+      background: var(--yellow);
+    }
+    .eyebrow-text {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    .sec-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+      line-height: 0.93;
+      margin-bottom: 24px;
+    }
+    .sec-title em { font-style: normal; color: var(--red); }
+
+    .sec-body {
+      font-size: 1rem;
+      color: var(--text-muted);
+      line-height: 1.78;
+      font-weight: 300;
+    }
+
+    /* ── LEISTUNGEN ── */
+    #leistungen {
+      background: var(--surface);
+      padding-top: 0; padding-bottom: 0;
+    }
+    .services-bar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .service-item {
+      padding: 36px 28px;
+      border-right: 1px solid var(--border);
+      text-decoration: none;
+      display: block;
+      transition: background 0.2s;
+    }
+    .service-item:last-child { border-right: none; }
+    .service-item:hover { background: var(--surface2); }
+
+    .svc-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.8rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.7;
+    }
+    .svc-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .svc-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .svc-arrow {
+      margin-top: 18px;
+      color: var(--yellow);
+      font-size: 1.1rem;
+      display: block;
+      transition: transform 0.2s;
+    }
+    .service-item:hover .svc-arrow { transform: translateX(5px); }
+
+    /* ── PHOTO SECTIONS ── */
+    .photo-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .photo-split.reverse { direction: rtl; }
+    .photo-split.reverse > * { direction: ltr; }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 2px;
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .photo-frame:hover img { transform: scale(1.03); }
+
+    .aspect-4-3 { aspect-ratio: 4/3; }
+    .aspect-3-4 { aspect-ratio: 3/4; }
+    .aspect-16-9 { aspect-ratio: 16/9; }
+    .aspect-21-9 { aspect-ratio: 21/9; }
+
+    /* ── FEATURE LIST ── */
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .feat-check {
+      width: 18px; height: 18px;
+      border: 1.5px solid var(--yellow);
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .feat-check::after {
+      content: '';
+      width: 7px; height: 4px;
+      border-left: 1.5px solid var(--yellow);
+      border-bottom: 1.5px solid var(--yellow);
+      transform: rotate(-45deg) translateY(-1px);
+    }
+    .feat-text {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+    .feat-text strong { color: var(--text); font-weight: 600; }
+
+    /* ── ABSCHLEPPSERVICE ── */
+    #abschleppservice { background: var(--black); }
+
+    /* ── LKW ── */
+    #lkw-abschleppung {
+      background: var(--surface);
+      position: relative;
+      overflow: hidden;
+    }
+    .lkw-bg-word {
+      position: absolute;
+      right: -10px; top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(9rem, 18vw, 18rem);
+      color: rgba(255,255,255,0.03);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+    }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: 36px;
+    }
+    .spec-cell {
+      background: var(--surface);
+      padding: 22px 20px;
+    }
+    .spec-val {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2rem;
+      color: var(--yellow);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .spec-lbl {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── PANNENHILFE ── */
+    #pannenhilfe { background: var(--black); }
+    .panne-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+      gap: 40px;
+    }
+    .panne-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .panne-grid--2col {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .panne-card {
+      background: var(--surface);
+      padding: 36px 28px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+    .panne-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 0;
+      background: var(--red);
+      transition: height 0.3s ease;
+    }
+    .panne-card:hover { background: var(--surface2); }
+    .panne-card:hover::before { height: 100%; }
+    .panne-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--yellow-dim);
+      letter-spacing: 0.22em;
+      margin-bottom: 18px;
+    }
+    .panne-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .panne-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── MIETWAGEN ── */
+    #mietwagen { background: var(--surface); }
+    .mietwagen-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+    }
+    .car-card {
+      background: var(--surface2);
+      overflow: hidden;
+      transition: background 0.2s;
+    }
+    .car-card:hover { background: var(--surface3); }
+    .car-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      position: relative;
+    }
+    .car-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+    .car-card:hover .car-img img { transform: scale(1.05); }
+    .car-info {
+      padding: 22px 26px;
+    }
+    .car-class {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      color: var(--yellow);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .car-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.45rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .car-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    .car-price {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      color: var(--red);
+      line-height: 1;
+      margin-bottom: 4px;
+      margin-top: 6px;
+    }
+    .car-price span {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .car-km {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .car-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .car-tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 2px;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* ── FUHRPARK ── */
+    #fuhrpark { background: var(--black); }
+    .fuhrpark-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 52px;
+    }
+    .fp-card {
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: border-color 0.25s;
+    }
+    .fp-card:hover { border-color: rgba(245,200,0,0.35); }
+    .fp-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+    }
+    .fp-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.45s ease;
+    }
+    .fp-card:hover .fp-img img { transform: scale(1.04); }
+    .fp-info {
+      padding: 20px 22px;
+      border-top: 1px solid var(--border);
+    }
+    .fp-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+    .fp-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── GALERIE ── */
+    #galerie { background: var(--surface); padding-top: 80px; padding-bottom: 80px; }
+    .galerie-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 36px;
+      gap: 32px;
+    }
+    .gallery-strip {
+      display: flex;
+      gap: 4px;
+      height: 420px;
+      width: 100%;
+    }
+    .g-cell {
+      flex: 0.4;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: flex 0.5s cubic-bezier(0.4,0,0.2,1);
+    }
+    .g-cell:first-child { flex: 2.8; }
+    .gallery-strip:hover .g-cell { flex: 0.4; }
+    .gallery-strip:hover .g-cell:hover { flex: 2.8; }
+    .g-cell img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .g-cell:hover img { transform: scale(1.04); }
+    .g-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(20,18,16,0.35);
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-strip:hover .g-cell .g-overlay { opacity: 0; }
+    .gallery-strip:hover .g-cell:hover .g-overlay { opacity: 1; }
+    .g-plus {
+      width: 42px; height: 42px;
+      border: 1.5px solid rgba(255,255,255,0.8);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.4rem;
+    }
+    /* Lightbox */
+    .gallery-lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9000;
+      background: rgba(10,9,8,0.96);
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-lightbox.open { display: flex; }
+    .gallery-lightbox img {
+      max-width: 90vw;
+      max-height: 88vh;
+      object-fit: contain;
+      border-radius: 4px;
+      animation: lbFadeIn 0.25s ease;
+    }
+    @keyframes lbFadeIn { from { opacity:0; transform:scale(0.94); } to { opacity:1; transform:scale(1); } }
+    .lb-btn {
+      position: absolute;
+      background: none;
+      border: none;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      padding: 12px;
+      transition: color 0.2s;
+      z-index: 2;
+    }
+    .lb-btn:hover { color: #fff; }
+    .lb-close { top: 20px; right: 20px; }
+    .lb-prev { left: 16px; top: 50%; transform: translateY(-50%); }
+    .lb-next { right: 16px; top: 50%; transform: translateY(-50%); }
+    .lb-counter {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.8rem;
+      font-family: 'DM Mono', monospace;
+      letter-spacing: 0.1em;
+      background: rgba(0,0,0,0.4);
+      padding: 6px 16px;
+      border-radius: 99px;
+    }
+    @media(max-width:768px) {
+      .gallery-strip {
+        height: 260px;
+        gap: 8px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+      }
+      .gallery-strip::-webkit-scrollbar { display: none; }
+      .g-cell {
+        flex: 0 0 78vw;
+        scroll-snap-align: start;
+        border-radius: 6px;
+        transition: none;
+      }
+      /* Hover-Expand auf Touch deaktivieren */
+      .gallery-strip:hover .g-cell { flex: 0 0 78vw; }
+      .gallery-strip:hover .g-cell:hover { flex: 0 0 78vw; }
+      /* Overlay immer leicht sichtbar auf Touch */
+      .g-cell .g-overlay { opacity: 1; background: rgba(20,18,16,0.2); }
+    }
+
+    /* ── PARTNER LAUFBAND ── */
+    #partner {
+      background: var(--surface2);
+      padding: 48px 0;
+      overflow: hidden;
+    }
+    .partner-header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .partner-lbl {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .partner-track-wrap {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .partner-track-wrap::before,
+    .partner-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .partner-track-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, var(--surface2), transparent);
+    }
+    .partner-track-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, var(--surface2), transparent);
+    }
+    .partner-track {
+      display: flex;
+      align-items: center;
+      gap: 80px;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+    .partner-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .partner-logo-img {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      filter: invert(1) grayscale(1) opacity(0.55);
+      transition: filter 0.3s;
+      flex-shrink: 0;
+    }
+    .partner-logo-img:hover { filter: invert(1) grayscale(1) opacity(0.85); }
+
+    /* ── FAQ ── */
+    #faq { background: var(--surface2); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+      margin-top: 48px;
+    }
+    .faq-item {
+      background: var(--surface);
+      padding: 28px 32px;
+      cursor: pointer;
+    }
+    .faq-item:hover { background: var(--surface2); }
+    .faq-q {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* ── KONTAKT ── */
+    #kontakt {
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .kontakt-info { padding-top: 8px; }
+    .info-block {
+      margin-top: 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+    .info-item { display: flex; flex-direction: column; gap: 4px; }
+    .info-key {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--yellow-dim);
+    }
+    .info-val {
+      font-size: 1rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.55;
+    }
+    .info-val a { color: var(--text); text-decoration: none; }
+    .info-val a:hover { color: var(--yellow); }
+
+    .phone-big {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      color: var(--red);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      display: block;
+      line-height: 1;
+      margin-top: 4px;
+      transition: color 0.2s;
+    }
+    .phone-big:hover { color: var(--red-bright); }
+
+    .kontakt-form {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 44px 38px;
+    }
+    .form-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.75rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 28px;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 11px 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.92rem;
+      outline: none;
+      border-radius: 2px;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(242,237,230,0.22); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--yellow); }
+    .form-group select option { background: var(--surface2); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit {
+      background: var(--red);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+      width: 100%;
+      transition: background 0.2s;
+      margin-top: 6px;
+    }
+    .form-submit:hover { background: var(--red-bright); }
+    .form-note {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+      margin-top: 10px;
+      text-align: center;
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 36px 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo img {
+      height: 50px; width: auto;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--yellow); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav { padding: 0 28px; }
+      section { padding: 72px 28px; }
+      #hero { padding: 71px 28px 72px; }
+      .services-bar { grid-template-columns: repeat(4, 1fr); }
+      .photo-split { grid-template-columns: 1fr; gap: 40px; }
+      .photo-split.reverse { direction: ltr; }
+      .photo-split.reverse > *:last-child { order: -1; }
+      #kontakt { grid-template-columns: 1fr; gap: 48px; }
+      .panne-grid { grid-template-columns: repeat(2, 1fr); }
+      .mietwagen-header { grid-template-columns: 1fr; gap: 28px; }
+      .car-grid { grid-template-columns: repeat(2, 1fr); }
+      .fuhrpark-grid { grid-template-columns: repeat(2, 1fr); }
+      footer { padding: 32px 28px; }
+      #partner { padding: 48px 28px; }
+      .hero-stats { display: none; }
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+      }
+      .g-cell:first-child { grid-row: auto; }
+      .g-cell { height: 220px; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .services-bar {
+        grid-template-columns: 1fr 1fr;
+        margin-left: -28px;
+        margin-right: -28px;
+      }
+      .service-item { padding: 24px 16px; }
+      .panne-grid--2col { grid-template-columns: repeat(2, 1fr); }
+      .panne-card { padding: 24px 14px; }
+      .panne-title { font-size: 1.15rem; }
+      .panne-grid { grid-template-columns: 1fr; }
+      .car-grid { grid-template-columns: 1fr; }
+      .fuhrpark-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-toggle { display: flex; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <!-- Structured Data: LocalBusiness + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.avas-frankenberg.de/#business",
+    "name": "AVAS – Autovermietung & Abschleppservice",
+    "legalName": "AVAS Frankenberg, Inh. Ralf Schmidt",
+    "description": "AVAS Frankenberg bietet 24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe, Autovermietung und Speditionsfahrten in Frankenberg (Eder) und Umgebung.",
+    "url": "https://www.avas-frankenberg.de/",
+    "telephone": "+4964512477",
+    "faxNumber": "+49645124772",
+    "email": "avas.ralf-schmidt@t-online.de",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Berleburger Str. 12",
+      "addressLocality": "Frankenberg (Eder)",
+      "postalCode": "35066",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 51.0602,
+      "longitude": 8.7977
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "17:00"
+      }
+    ],
+    "priceRange": "€€",
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 51.0602,
+        "longitude": 8.7977
+      },
+      "geoRadius": "50000"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Leistungen AVAS Frankenberg",
+      "itemListElement": [
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Abschleppdienst 24/7"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "LKW-Bergung"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pannenhilfe"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Autovermietung SEAT & Renault"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spedition & Transport"}}
+      ]
+    },
+    "sameAs": [
+      "https://www.instagram.com/ralfschmidt82"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wie schnell kommt AVAS bei einer Panne?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AVAS ist 24 Stunden am Tag, 7 Tage die Woche erreichbar. Im Raum Frankenberg und Waldeck-Frankenberg sind wir in der Regel innerhalb von 30–60 Minuten bei Ihnen. Rufen Sie uns an: 06451 / 24770."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welche Mietwagen hat AVAS in Frankenberg?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AVAS Frankenberg bietet drei Fahrzeuge zur Miete: Seat Arona (SUV/Crossover, 79 € / Tag), Seat Leon (Kompakt, 72 € / Tag) und Renault Master Kastenwagen für Umzüge und Transporte (140 € / Tag). Seat-Fahrzeuge inklusive 150 km (0,49 €/km), Renault Master inklusive 100 km (0,59 €/km). Lademaße Master: 3,0 × 1,80 × 1,85 m. Werkstattersatz und Unfallersatz möglich."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Kann AVAS auch LKW abschleppen?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAS Frankenberg ist spezialisiert auf LKW-Abschleppung und Bergung schwerer Nutzfahrzeuge, Busse und Sattelzüge. Wir sind Vertragspartner von Assistance Partner, ACE, AvD, LVM, ARCD, HLPY, ACV und TSE – die Abrechnung läuft direkt über Ihren Anbieter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Welches Einzugsgebiet hat AVAS?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AVAS ist vorrangig im Landkreis Waldeck-Frankenberg und Umgebung tätig, führt aber auch überregionale Transporte und Langstreckenabschleppungen bundesweit durch."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Rechnet AVAS direkt mit meiner Versicherung ab?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. AVAS unterstützt Sie bei der Versicherungsabwicklung und arbeitet als Vertragspartner mit zahlreichen Pannendiensten und Versicherern zusammen, darunter ACE, Assistance Partner, AvD, LVM, HLPY, ACV und TSE."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bietet AVAS auch Pannenhilfe ohne Abschleppung?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ja. Unser Pannenwagen ist für Starthilfe, Reifenwechsel, Türöffnung, Kraftstoff-Notversorgung und sonstige Soforthilfe direkt vor Ort ausgerüstet – ohne dass Ihr Fahrzeug abgeschleppt werden muss."
+        }
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.avas-frankenberg.de/#website",
+    "url": "https://www.avas-frankenberg.de/",
+    "name": "AVAS Frankenberg",
+    "description": "24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe & Autovermietung in Frankenberg (Eder)",
+    "publisher": {
+      "@id": "https://www.avas-frankenberg.de/#business"
+    },
+    "inLanguage": "de-DE"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://www.avas-frankenberg.de/#webpage",
+    "url": "https://www.avas-frankenberg.de/",
+    "name": "AVAS Frankenberg – Abschleppdienst, Pannenhilfe & Autovermietung 24/7",
+    "isPartOf": { "@id": "https://www.avas-frankenberg.de/#website" },
+    "about": { "@id": "https://www.avas-frankenberg.de/#business" },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": ["h1", ".sec-title", ".faq-q", ".faq-a"]
+    },
+    "inLanguage": "de-DE"
+  }
+  </script>
+</head>
+<body>
+
+<div id="scroll-progress"></div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="#hero" class="nav-logo-img">
+    <img src="/images/avas logo.png?v=3" alt="AVAS Frankenberg">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#abschleppservice">Abschleppen</a></li>
+    <li><a href="#lkw-abschleppung">LKW</a></li>
+    <li><a href="#pannenhilfe">Pannenhilfe</a></li>
+    <li><a href="#mietwagen">Mietwagen</a></li>
+    <li><a href="#spedition">Spedition</a></li>
+    <li><a href="#fuhrpark">Fuhrpark</a></li>
+    <li><a href="#galerie">Galerie</a></li>
+    <li><a href="#kontakt">Kontakt</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="tel:0645124770" class="emergency-badge">
+      <div class="pulse-dot"></div>
+      06451 / 24770
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg-img"></div>
+  <div class="hero-bg-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <div class="hero-eyebrow-text">Autovermietung & Abschleppservice · Ralf Schmidt</div>
+    </div>
+    <h1 class="hero-h1">
+      Wenn es<br>
+      <em>drauf ankommt.</em>
+    </h1>
+    <p class="hero-sub">
+      Abschleppen, Bergen, Pannenhilfe, Spedition und Autovermietung.
+      Schnell, zuverlässig und bei Notfällen rund um die Uhr für Sie da.
+    </p>
+    <div class="hero-actions">
+      <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+      <a href="#kontakt" class="btn-outline">Nachricht senden</a>
+      <a href="https://www.instagram.com/ralfschmidt82/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+        Instagram
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">24/7</div>
+      <div class="stat-label">Notfalldienst</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">Abschleppung &amp; Pannenhilfe</div>
+      <div class="stat-label">PKW &amp; LKW</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">Mietwagen</div>
+      <div class="stat-label">SEAT &amp; RENAULT</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-inner">
+    <span>Abschleppservice</span>
+    <span class="strip-dot"></span>
+    <span>PKW &amp; LKW Bergung</span>
+    <span class="strip-dot"></span>
+    <span>Pannenhilfe 24/7</span>
+    <span class="strip-dot"></span>
+    <span>Autovermietung</span>
+    <span class="strip-dot"></span>
+    <span>Werkstattersatz</span>
+    <span class="strip-dot"></span>
+    <span>Unfallersatz</span>
+    <span class="strip-dot"></span>
+    <span>Spedition &amp; Transport</span>
+    <span class="strip-dot"></span>
+    <span>Kurierdienst</span>
+    <span class="strip-dot"></span>
+    <span>ACE Vertragspartner</span>
+    <span class="strip-dot"></span>
+    <span>Assistance Partner</span>
+    <span class="strip-dot"></span>
+    <!-- Duplikat für nahtloses Laufband -->
+    <span>Abschleppservice</span>
+    <span class="strip-dot"></span>
+    <span>PKW &amp; LKW Bergung</span>
+    <span class="strip-dot"></span>
+    <span>Pannenhilfe 24/7</span>
+    <span class="strip-dot"></span>
+    <span>Autovermietung</span>
+    <span class="strip-dot"></span>
+    <span>Werkstattersatz</span>
+    <span class="strip-dot"></span>
+    <span>Unfallersatz</span>
+    <span class="strip-dot"></span>
+    <span>Spedition &amp; Transport</span>
+    <span class="strip-dot"></span>
+    <span>Kurierdienst</span>
+    <span class="strip-dot"></span>
+    <span>ACE Vertragspartner</span>
+    <span class="strip-dot"></span>
+    <span>Assistance Partner</span>
+  </div>
+</div>
+
+<!-- LEISTUNGEN -->
+<section id="leistungen">
+  <div class="services-bar">
+    <a href="#abschleppservice" class="service-item">
+      <div class="svc-num">01</div>
+      <div class="svc-name">Abschleppservice</div>
+      <div class="svc-desc">PKW-Abschleppung, schnell &amp; 24h erreichbar</div>
+      <span class="svc-arrow">→</span>
+    </a>
+    <a href="#lkw-abschleppung" class="service-item">
+      <div class="svc-num">02</div>
+      <div class="svc-name">LKW-Abschleppung</div>
+      <div class="svc-desc">Schwerlast, Sattelzüge, Busse</div>
+      <span class="svc-arrow">→</span>
+    </a>
+    <a href="#pannenhilfe" class="service-item">
+      <div class="svc-num">03</div>
+      <div class="svc-name">Pannenhilfe</div>
+      <div class="svc-desc">Starthilfe, Reifenwechsel und mehr</div>
+      <span class="svc-arrow">→</span>
+    </a>
+    <a href="#mietwagen" class="service-item">
+      <div class="svc-num">04</div>
+      <div class="svc-name">Mietwagen</div>
+      <div class="svc-desc">Werkstattersatz &amp; freie Anmietung</div>
+      <span class="svc-arrow">→</span>
+    </a>
+    <a href="#spedition" class="service-item">
+      <div class="svc-num">05</div>
+      <div class="svc-name">Spedition</div>
+      <div class="svc-desc">Transport bundesweit und europaweit</div>
+      <span class="svc-arrow">→</span>
+    </a>
+    <a href="#fuhrpark" class="service-item">
+      <div class="svc-num">06</div>
+      <div class="svc-name">Fuhrpark</div>
+      <div class="svc-desc">Spezialisiertes Gerät für jeden Einsatz</div>
+      <span class="svc-arrow">→</span>
+    </a>
+    <a href="#galerie" class="service-item">
+      <div class="svc-num">07</div>
+      <div class="svc-name">Impressionen</div>
+      <div class="svc-desc">Bilder aus dem Betrieb</div>
+      <span class="svc-arrow">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- ABSCHLEPPSERVICE -->
+<section id="abschleppservice">
+  <div class="photo-split">
+    <div class="photo-frame aspect-4-3">
+      <img src="/images/1483036116-d8321340.jpg" alt="AVAS Fuhrpark – Abschleppservice Frankenberg" loading="lazy" width="640" height="480">
+    </div>
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">01 — Abschleppservice</div>
+      </div>
+      <h2 class="sec-title">Schnell.<br><em>Sicher.</em><br>24 Stunden.</h2>
+      <p class="sec-body">
+        Ob Unfall, Panne oder defektes Fahrzeug: Wir sind rund um die Uhr für Sie da. Wir kommen schnell zu Ihnen und bringen Ihr Fahrzeug sicher ans Ziel, regional und überregional.
+      </p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>24/7 Notfalldienst</strong> auch nachts, an Wochenenden und Feiertagen</div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>Unfallbergung</strong> sachgerechte Bergung und Transport Ihres Fahrzeugs</div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>Kurz- und Langstreckentransport</strong> regional und überregional</div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>Versicherungsabwicklung</strong> wir helfen direkt mit Ihrer Versicherung</div>
+        </div>
+      </div>
+      <div style="margin-top: 32px;">
+        <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LKW ABSCHLEPPUNG -->
+<section id="lkw-abschleppung">
+  <div class="lkw-bg-word" aria-hidden="true">LKW</div>
+  <div class="photo-split reverse">
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">02 — Schwerlast</div>
+      </div>
+      <h2 class="sec-title">LKW-<br><em>Abschleppung</em></h2>
+      <p class="sec-body">
+        Für schwere Nutzfahrzeuge braucht es das richtige Equipment. Wir haben spezialisierte Abschleppfahrzeuge für LKW, Busse und Sattelzüge im Einsatz und helfen schnell auf Autobahnen und Bundesstraßen.
+      </p>
+      <p class="sec-body" style="margin-top:14px;">
+        Wir sind Vertragspartner von Assistance Partner, ACE, AvD, LVM, ARCD, HLPY, ACV und TSE. Die Abrechnung läuft direkt über Ihren Anbieter.
+      </p>
+      <div style="margin-top: 28px;">
+        <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+      </div>
+    </div>
+    <div>
+      <div class="photo-frame aspect-4-3">
+        <img src="/images/LKW Berger 4achser.jpg" alt="LKW-Abschlepper 4-Achser AVAS Frankenberg" loading="lazy" width="640" height="480">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PANNENHILFE -->
+<section id="pannenhilfe">
+  <div class="photo-split">
+    <div class="photo-frame aspect-4-3">
+      <img src="/images/Pannenwagen.jpeg" alt="AVAS Pannenwagen – Soforthilfe vor Ort" loading="lazy" width="800" height="1067">
+    </div>
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">03 — Pannendienst</div>
+      </div>
+      <h2 class="sec-title">Pannenhilfe<br><em>vor Ort.</em></h2>
+      <p class="sec-body">
+        Nicht jede Panne braucht einen Abschleppwagen. Oft sind wir direkt am Fahrzeug schneller.
+      </p>
+      <div class="panne-grid panne-grid--2col" style="margin-top:36px;">
+        <div class="panne-card">
+          <div class="panne-num">01</div>
+          <div class="panne-title">Starthilfe</div>
+          <div class="panne-desc">Leere Batterie? Wir kommen mit dem Pannenwagen und starten Ihr Fahrzeug wieder an.</div>
+        </div>
+        <div class="panne-card">
+          <div class="panne-num">02</div>
+          <div class="panne-title">Reifenwechsel</div>
+          <div class="panne-desc">Platter Reifen auf der Strecke? Wir wechseln das Rad vor Ort.</div>
+        </div>
+        <div class="panne-card">
+          <div class="panne-num">03</div>
+          <div class="panne-title">Türöffnung</div>
+          <div class="panne-desc">Schlüssel eingeschlossen? Wir öffnen Ihr Fahrzeug ohne Schäden.</div>
+        </div>
+        <div class="panne-card">
+          <div class="panne-num">04</div>
+          <div class="panne-title">Kraftstoff-Notversorgung</div>
+          <div class="panne-desc">Tank leer auf der Strecke? Wir bringen genug Kraftstoff für die nächste Tankstelle.</div>
+        </div>
+        <div class="panne-card">
+          <div class="panne-num">05</div>
+          <div class="panne-title">Bergungsdienst</div>
+          <div class="panne-desc">Fahrzeug im Graben oder festgefahren? Wir bergen aus jeder Lage.</div>
+        </div>
+        <div class="panne-card">
+          <div class="panne-num">06</div>
+          <div class="panne-title">Sonstiger Pannendienst</div>
+          <div class="panne-desc">Jede Panne ist anders. Unser Team findet die richtige Lösung, rund um die Uhr.</div>
+        </div>
+      </div>
+      <div style="margin-top:32px;">
+        <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MIETWAGEN -->
+<section id="mietwagen">
+  <div class="mietwagen-header">
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">04 — Autovermietung</div>
+      </div>
+      <h2 class="sec-title">Mietwagen<br><em>für jeden<br>Anlass.</em></h2>
+    </div>
+    <div>
+      <p class="sec-body">
+        Kurzfristig nach einem Unfall oder geplant für ein Wochenende: Wir haben das passende Fahrzeug. Vom Kompaktwagen für den Alltag bis zum großen Kastenwagen für Umzüge und Transporte. Werkstattersatz, Unfallersatz oder einfach mieten. Direkt bei AVAS in Frankenberg.
+      </p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;">
+        <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Werkstattersatz</span>
+        <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Unfallersatz</span>
+        <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Freie Anmietung</span>
+        <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">· Seat &amp; Renault ·</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="car-grid">
+    <div class="car-card">
+      <div class="car-img">
+        <img src="/images/mietwagen seat arona.png" alt="Mietwagen Seat Arona – AVAS Frankenberg" loading="lazy" width="640" height="360">
+      </div>
+      <div class="car-info">
+        <div class="car-class">SUV / Crossover</div>
+        <div class="car-name">Seat Arona</div>
+        <div class="car-price">79 € <span>/ Tag</span></div>
+        <div class="car-km">inkl. 150 km &nbsp;·&nbsp; je weiterer km 0,49 €</div>
+      </div>
+    </div>
+    <div class="car-card">
+      <div class="car-img">
+        <img src="/images/Mietwagen Seat Leon.png" alt="Mietwagen Seat Leon – AVAS Frankenberg" loading="lazy" width="640" height="360">
+      </div>
+      <div class="car-info">
+        <div class="car-class">Kompakt</div>
+        <div class="car-name">Seat Leon</div>
+        <div class="car-price">72 € <span>/ Tag</span></div>
+        <div class="car-km">inkl. 150 km &nbsp;·&nbsp; je weiterer km 0,49 €</div>
+      </div>
+    </div>
+    <div class="car-card">
+      <div class="car-img">
+        <img src="/images/Mietwagen Renault Master.png" alt="Mietwagen Renault Master – AVAS Frankenberg" loading="lazy" width="640" height="360">
+      </div>
+      <div class="car-info">
+        <div class="car-class">Kastenwagen · Umzüge &amp; Transporte</div>
+        <div class="car-name">Renault Master</div>
+        <div class="car-price">140 € <span>/ Tag</span></div>
+        <div class="car-km">inkl. 100 km &nbsp;·&nbsp; je weiterer km 0,59 € &nbsp;·&nbsp; LR: 3,0 × 1,80 × 1,85 m</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px; text-align:center;">
+    <a href="#kontakt" class="btn-primary">Fahrzeug anfragen</a>
+  </div>
+</section>
+
+<!-- SPEDITION -->
+<section id="spedition" style="background: var(--black);">
+  <div class="photo-split">
+    <div class="photo-frame aspect-4-3">
+      <img src="/images/Spedition Opel Vivaro.png" alt="Speditionsfahrzeug Opel Vivaro – AVAS Frankenberg" loading="lazy" width="640" height="480">
+    </div>
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">05 — Spedition &amp; Transport</div>
+      </div>
+      <h2 class="sec-title">Transport<br><em>auf Bestellung.</em></h2>
+      <p class="sec-body">
+        Mit unserem Speditionsfahrzeug übernehmen wir Transporte und Kurierfahrten regional, bundes- und europaweit. Einzelsendungen oder regelmäßige Fahrten, wir liefern zuverlässig.
+      </p>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>Bundes- und europaweit</strong> Transporte im gesamten Bundesgebiet und Europa</div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>Kurierdienst</strong> zeitkritische Sendungen termingerecht zugestellt</div>
+        </div>
+        <div class="feature-item">
+          <div class="feat-check"></div>
+          <div class="feat-text"><strong>Flexibel und zuverlässig</strong> auf Ihren Bedarf abgestimmt</div>
+        </div>
+      </div>
+      <div style="margin-top: 32px;">
+        <a href="#kontakt" class="btn-primary">Transport anfragen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUHRPARK -->
+<section id="fuhrpark">
+  <div class="eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text">06 — Fuhrpark</div>
+  </div>
+  <h2 class="sec-title" style="max-width:600px;">Unser<br><em>Fuhrpark.</em></h2>
+  <p class="sec-body" style="max-width:520px;">Für jeden Einsatz das richtige Fahrzeug. Von der einfachen Panne bis zur schweren Bergung auf der Autobahn.</p>
+
+  <div class="fuhrpark-grid">
+    <div class="fp-card">
+      <div class="fp-img">
+        <img src="/images/hero-b1487577.jpg" alt="Abschleppwagen AVAS" loading="lazy" width="400" height="300">
+      </div>
+      <div class="fp-info">
+        <div class="fp-name">Abschleppwagen</div>
+        <div class="fp-desc">Mit Plattform, Kran und Seilwinde. Für die Bergung und den Transport aller PKW-Klassen.</div>
+      </div>
+    </div>
+    <div class="fp-card">
+      <div class="fp-img">
+        <img src="/images/LKW Berger 4achser.jpg" alt="LKW-Abschlepper AVAS" loading="lazy" width="400" height="300">
+      </div>
+      <div class="fp-info">
+        <div class="fp-name">LKW-Abschlepper</div>
+        <div class="fp-desc">Speziell für LKW, Reisebusse und Sattelzüge. Einsatzbereit auf allen Bundes- und Autobahnen.</div>
+      </div>
+    </div>
+    <div class="fp-card">
+      <div class="fp-img">
+        <img src="/images/LKW Bergung Pannenfahrzeug.jpg" alt="Pannenwagen AVAS" loading="lazy" width="400" height="300">
+      </div>
+      <div class="fp-info">
+        <div class="fp-name">Pannenwagen</div>
+        <div class="fp-desc">Vollausgerüstet für Starthilfe, Reifenwechsel, Türöffnung und alle Arten von Soforthilfe direkt vor Ort.</div>
+      </div>
+    </div>
+    <div class="fp-card">
+      <div class="fp-img">
+        <img src="/images/Spedition Opel Vivaro.png" alt="Speditionsfahrzeug Opel Vivaro AVAS" loading="lazy" width="400" height="300">
+      </div>
+      <div class="fp-info">
+        <div class="fp-name">Speditionsfahrzeug</div>
+        <div class="fp-desc">Opel Vivaro mit 850 kg Nutzlast für regionale Transporte und Kurierfahrten.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE -->
+<section id="galerie">
+  <div class="galerie-head">
+    <div>
+      <div class="eyebrow">
+        <div class="eyebrow-line"></div>
+        <div class="eyebrow-text">07 — Impressionen</div>
+      </div>
+      <h2 class="sec-title" style="font-size:clamp(2.2rem,4vw,3.8rem);">Bilder aus<br><em>unserem Alltag.</em></h2>
+    </div>
+  </div>
+  <div class="gallery-strip" id="galleryStrip">
+    <div class="g-cell" data-index="0">
+      <img src="/images/Bildergalerie/1.jpeg" alt="AVAS Frankenberg Impression 1" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="1">
+      <img src="/images/Bildergalerie/2.png" alt="AVAS Frankenberg Impression 2" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="2">
+      <img src="/images/Bildergalerie/3.png" alt="AVAS Frankenberg Impression 3" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="3">
+      <img src="/images/Bildergalerie/4.png" alt="AVAS Frankenberg Impression 4" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="4">
+      <img src="/images/Bildergalerie/5.png" alt="AVAS Frankenberg Impression 5" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="5">
+      <img src="/images/Bildergalerie/6.png" alt="AVAS Frankenberg Impression 6" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="6">
+      <img src="/images/Bildergalerie/7.png" alt="AVAS Frankenberg Impression 7" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="7">
+      <img src="/images/Bildergalerie/8.png" alt="AVAS Frankenberg Impression 8" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="8">
+      <img src="/images/Bildergalerie/9.png" alt="AVAS Frankenberg Impression 9" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="9">
+      <img src="/images/Bildergalerie/10.png" alt="AVAS Frankenberg Impression 10" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="10">
+      <img src="/images/Bildergalerie/11.png" alt="AVAS Frankenberg Impression 11" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="11">
+      <img src="/images/Bildergalerie/12.png" alt="AVAS Frankenberg Impression 12" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="12">
+      <img src="/images/Bildergalerie/13.png" alt="AVAS Frankenberg Impression 13" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="13">
+      <img src="/images/Bildergalerie/14.png" alt="AVAS Frankenberg Impression 14" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="14">
+      <img src="/images/Bildergalerie/15.png" alt="AVAS Frankenberg Impression 15" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="15">
+      <img src="/images/Bildergalerie/16.png" alt="AVAS Frankenberg Impression 16" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+    <div class="g-cell" data-index="16">
+      <img src="/images/Bildergalerie/17.png" alt="AVAS Frankenberg Impression 17" loading="lazy">
+      <div class="g-overlay"><div class="g-plus">+</div></div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="gallery-lightbox" id="galleryLightbox" role="dialog" aria-modal="true">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Schliessen">
+      <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Vorheriges Bild">
+      <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <img id="lbImg" src="" alt="">
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Naechstes Bild">
+      <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="lb-counter" id="lbCounter"></div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner">
+  <div class="partner-header">
+    <div class="partner-lbl">Unsere Partner &amp; Kooperationen</div>
+  </div>
+  <div class="partner-track-wrap">
+    <div class="partner-track">
+      <!-- Set 1 -->
+      <img src="/images/Partner/ace logo.svg" alt="ACE" class="partner-logo-img">
+      <img src="/images/Partner/assistance partner logo.png" alt="Assistance Partner" class="partner-logo-img">
+      <img src="/images/Partner/avd logo.png" alt="AvD" class="partner-logo-img">
+      <img src="/images/Partner/arcd logo.png" alt="ARCD" class="partner-logo-img">
+      <img src="/images/Partner/ludwig.png" alt="Ludwig" class="partner-logo-img" style="filter: grayscale(1) opacity(0.55);">
+      <img src="/images/Partner/vba logo.png" alt="VBA" class="partner-logo-img" style="filter: grayscale(1) brightness(2) opacity(0.55);">
+      <img src="/images/Partner/lvm logo.png" alt="LVM" class="partner-logo-img">
+      <img src="/images/Partner/hlpy logo.png" alt="HLPY" class="partner-logo-img" style="height: 64px;">
+      <img src="/images/Partner/acv logo.png" alt="ACV" class="partner-logo-img" style="height: 72px;">
+      <img src="/images/Partner/tse logo.png" alt="TSE" class="partner-logo-img" style="height: 68px;">
+      <!-- Set 2 – Duplikat für nahtloses Laufband -->
+      <img src="/images/Partner/ace logo.svg" alt="ACE" class="partner-logo-img" aria-hidden="true">
+      <img src="/images/Partner/assistance partner logo.png" alt="Assistance Partner" class="partner-logo-img" aria-hidden="true">
+      <img src="/images/Partner/avd logo.png" alt="AvD" class="partner-logo-img" aria-hidden="true">
+      <img src="/images/Partner/arcd logo.png" alt="ARCD" class="partner-logo-img" aria-hidden="true">
+      <img src="/images/Partner/ludwig.png" alt="Ludwig" class="partner-logo-img" aria-hidden="true" style="filter: grayscale(1) opacity(0.55);">
+      <img src="/images/Partner/vba logo.png" alt="VBA" class="partner-logo-img" aria-hidden="true" style="filter: grayscale(1) brightness(2) opacity(0.55);">
+      <img src="/images/Partner/lvm logo.png" alt="LVM" class="partner-logo-img" aria-hidden="true">
+      <img src="/images/Partner/hlpy logo.png" alt="HLPY" class="partner-logo-img" aria-hidden="true" style="height: 64px;">
+      <img src="/images/Partner/acv logo.png" alt="ACV" class="partner-logo-img" aria-hidden="true" style="height: 72px;">
+      <img src="/images/Partner/tse logo.png" alt="TSE" class="partner-logo-img" aria-hidden="true">
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="eyebrow">
+    <div class="eyebrow-line"></div>
+    <div class="eyebrow-text">Häufige Fragen</div>
+  </div>
+  <h2 class="sec-title" style="max-width:600px; margin-bottom:0;">Ihre Fragen,<br><em>unsere Antworten.</em></h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">Wie schnell kommt AVAS bei einer Panne?</div>
+      <div class="faq-a">AVAS ist 24 Stunden am Tag, 7 Tage die Woche erreichbar. Im Raum Frankenberg und Waldeck-Frankenberg sind wir in der Regel innerhalb von 30–60 Minuten bei Ihnen. Rufen Sie uns an: <a href="tel:0645124770" style="color:var(--red); text-decoration:none;">06451 / 24770</a>.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Welche Mietwagen hat AVAS in Frankenberg?</div>
+      <div class="faq-a">Seat Arona (SUV/Crossover, 79 €/Tag), Seat Leon (Kompakt, 72 €/Tag) und Renault Master Kastenwagen für Umzüge &amp; Transporte (140 €/Tag). Seat-Fahrzeuge inkl. 150 km (0,49 €/km), Renault Master inkl. 100 km (0,59 €/km). Werkstattersatz und Unfallersatz möglich.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Kann AVAS auch LKW abschleppen?</div>
+      <div class="faq-a">Ja. Wir sind spezialisiert auf LKW-Abschleppung und Bergung schwerer Nutzfahrzeuge, Busse und Sattelzüge. Als Vertragspartner von ACE, Assistance Partner, AvD, LVM, HLPY, ACV und TSE erfolgt die Abrechnung direkt über Ihren Anbieter.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Welches Einzugsgebiet hat AVAS?</div>
+      <div class="faq-a">Schwerpunkt ist der Landkreis Waldeck-Frankenberg. Wir führen aber auch überregionale Transporte und Langstreckenabschleppungen bundesweit durch.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Rechnet AVAS direkt mit meiner Versicherung ab?</div>
+      <div class="faq-a">Ja. Wir unterstützen Sie bei der Versicherungsabwicklung und arbeiten als Vertragspartner mit ACE, Assistance Partner, AvD, LVM, ARCD, HLPY, ACV und TSE zusammen.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Gibt es Pannenhilfe ohne Abschleppung?</div>
+      <div class="faq-a">Ja. Unser Pannenwagen ist für Starthilfe, Reifenwechsel, Türöffnung, Kraftstoff-Notversorgung und Soforthilfe vor Ort ausgerüstet – ohne dass Ihr Fahrzeug abtransportiert werden muss.</div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <div class="kontakt-info">
+    <div class="eyebrow">
+      <div class="eyebrow-line"></div>
+      <div class="eyebrow-text">08 — Kontakt</div>
+    </div>
+    <h2 class="sec-title">Einfach<br><em>melden.</em></h2>
+    <div class="info-block">
+      <div class="info-item">
+        <div class="info-key">Notfall und Abschleppung, 24/7</div>
+        <a href="tel:0645124770" class="phone-big">06451 / 24770</a>
+        <div style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">Bei Notfällen rund um die Uhr erreichbar. 7 Tage die Woche.</div>
+      </div>
+      <div class="info-item">
+        <div class="info-key">Fax</div>
+        <div class="info-val">06451 / 24772</div>
+      </div>
+      <div class="info-item">
+        <div class="info-key">E-Mail</div>
+        <div class="info-val"><a href="mailto:avas.ralf-schmidt@t-online.de">avas.ralf-schmidt@t-online.de</a></div>
+      </div>
+      <div class="info-item">
+        <div class="info-key">Adresse</div>
+        <div class="info-val">
+          <a href="https://maps.google.com/?q=Berleburger+Str.+12,+35066+Frankenberg" target="_blank" rel="noopener noreferrer">
+            Berleburger Straße 12<br>35066 Frankenberg (Eder)
+          </a>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-key">Bürozeiten</div>
+        <div class="info-val">Mo bis Fr: 08:00 bis 17:00 Uhr<br><span style="color:var(--yellow); font-size:0.88rem; font-weight:500;">Abschleppung: 24 Stunden, 7 Tage</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kontakt-form">
+    <div class="form-title">Nachricht senden</div>
+    <form id="contact-form" novalidate>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="vorname">Vorname</label>
+          <input type="text" id="vorname" name="vorname" placeholder="Max" autocomplete="given-name">
+        </div>
+        <div class="form-group">
+          <label for="nachname">Nachname</label>
+          <input type="text" id="nachname" name="nachname" placeholder="Mustermann" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="telefon">Telefonnummer</label>
+        <input type="tel" id="telefon" name="telefon" placeholder="0123 456789" autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="max@beispiel.de" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label for="betreff">Betreff</label>
+        <select id="betreff" name="betreff">
+          <option value="">— Bitte wählen —</option>
+          <option value="Abschleppservice anfragen">Abschleppservice anfragen</option>
+          <option value="LKW-Abschleppung">LKW-Abschleppung</option>
+          <option value="Pannenhilfe">Pannenhilfe</option>
+          <option value="Mietwagen anfragen">Mietwagen anfragen</option>
+          <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="nachricht">Ihre Nachricht</label>
+        <textarea id="nachricht" name="nachricht" placeholder="Wie können wir Ihnen helfen?"></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="form-submit">Nachricht senden →</button>
+    </form>
+    <div class="form-note">
+      Bei dringenden Fällen bitte direkt anrufen: <strong><a href="tel:0645124770" style="color:var(--red); text-decoration:none;">06451 / 24770</a></strong>, rund um die Uhr.
+    </div>
+  </div>
+</section>
+
+<!-- DIGITALE PARTNER – subtile Verlinkung für SEO / Backlinks -->
+<div style="background:var(--black); border-top:1px solid var(--border); padding:18px 56px; display:flex; align-items:center; gap:32px; flex-wrap:wrap;">
+  <span style="font-family:'DM Mono',monospace; font-size:0.62rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); flex-shrink:0;">Digitale Partner</span>
+  <a href="https://www.360-ai.org" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; text-decoration:none; opacity:0.45; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.45'">
+    <img src="/images/Partner/360ai.png" alt="360ai – KI-Beratung &amp; Digitalisierung" style="height:22px; width:auto; filter:brightness(0) invert(0.7);">
+  </a>
+  <a href="https://www.meinumzugsrechner.de" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; text-decoration:none; opacity:0.45; transition:opacity 0.2s;" onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='0.45'">
+    <img src="/images/Partner/logomeinumzugsrechner.png" alt="meinumzugsrechner.de – Umzugskosten berechnen" style="height:22px; width:auto; filter:brightness(0) invert(0.7);">
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <a href="#hero">
+      <img src="/images/avas logo.png?v=3" alt="AVAS Frankenberg">
+    </a>
+  </div>
+  <div class="footer-copy">© 2026 AVAS · Ralf Schmidt · Berleburger Str. 12 · 35066 Frankenberg (Eder)</div>
+  <ul class="footer-links">
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+</footer>
+
+<script>
+// Scroll progress bar
+window.addEventListener('scroll', function() {
+  var d = document.documentElement;
+  var pct = d.scrollTop / (d.scrollHeight - d.clientHeight);
+  document.getElementById('scroll-progress').style.width = (pct * 100) + '%';
+});
+
+// Mobile nav
+var navToggle = document.getElementById('nav-toggle');
+var navLinks = document.querySelector('.nav-links');
+var mobileOpen = false;
+navToggle.addEventListener('click', function() {
+  mobileOpen = !mobileOpen;
+  if (mobileOpen) {
+    navLinks.style.cssText = 'display:flex; flex-direction:column; position:fixed; top:71px; left:0; right:0; background:rgba(20,18,16,0.98); padding:24px 28px; gap:18px; z-index:99; border-bottom:1px solid rgba(255,255,255,0.09);';
+    navToggle.setAttribute('aria-label', 'Menü schließen');
+  } else {
+    navLinks.style.cssText = '';
+    navToggle.setAttribute('aria-label', 'Menü öffnen');
+  }
+});
+document.querySelectorAll('.nav-links a').forEach(function(a) {
+  a.addEventListener('click', function() { mobileOpen = false; navLinks.style.cssText = ''; });
+});
+
+// Contact form – mailto handler
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var vorname = document.getElementById('vorname').value.trim();
+  var nachname = document.getElementById('nachname').value.trim();
+  var telefon = document.getElementById('telefon').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var betreff = document.getElementById('betreff').value || 'Anfrage über Website';
+  var nachricht = document.getElementById('nachricht').value.trim();
+
+  var body = 'Name: ' + vorname + ' ' + nachname + '\n'
+           + 'Telefon: ' + telefon + '\n'
+           + 'E-Mail: ' + email + '\n\n'
+           + nachricht;
+
+  var btn = document.getElementById('form-submit');
+  window.location.href = 'mailto:avas.ralf-schmidt@t-online.de'
+    + '?subject=' + encodeURIComponent(betreff)
+    + '&body=' + encodeURIComponent(body);
+
+  btn.textContent = '✓ E-Mail-Programm geöffnet';
+  btn.style.background = '#2a7a3a';
+  setTimeout(function() {
+    btn.textContent = 'Nachricht senden →';
+    btn.style.background = '';
+  }, 4000);
+});
+</script>
+
+<script>
+/* ── Gallery Lightbox ── */
+(function() {
+  var cells = document.querySelectorAll('#galleryStrip .g-cell');
+  var lb    = document.getElementById('galleryLightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCounter = document.getElementById('lbCounter');
+  var current = 0;
+  var images = Array.from(cells).map(function(c) {
+    var img = c.querySelector('img');
+    return { src: img.src, alt: img.alt };
+  });
+
+  function open(index) {
+    current = index;
+    lbImg.src = images[current].src;
+    lbImg.alt = images[current].alt;
+    lbCounter.textContent = (current + 1) + ' / ' + images.length;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function prev() { open((current - 1 + images.length) % images.length); }
+  function next() { open((current + 1) % images.length); }
+
+  cells.forEach(function(cell) {
+    cell.addEventListener('click', function() {
+      open(parseInt(cell.dataset.index));
+    });
+  });
+
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function(e) { e.stopPropagation(); prev(); });
+  document.getElementById('lbNext').addEventListener('click', function(e) { e.stopPropagation(); next(); });
+  lb.addEventListener('click', function(e) { if (e.target === lb) close(); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+})();
+</script>
+</body>
+</html>

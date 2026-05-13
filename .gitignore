@@ -6,6 +6,14 @@ design_handoff_avas_onepager/README.md
 # Planungsdatei
 PLAN-website-finalisierung.md
 
+# Astro
+dist/
+node_modules/
+.astro/
+
+# Env (Tokens nie in Git!)
+.env
+
 # System
 .DS_Store
 Thumbs.db
