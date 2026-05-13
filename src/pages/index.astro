@@ -34,9 +34,9 @@ const fallbackGalerie = [
 ];
 
 const fallbackMietwagen = [
-  { name: 'Seat Arona', bild: { filename: '/images/mietwagen seat arona.png' }, kategorie: 'SUV / Crossover', preis_tag: '79 € / Tag' },
-  { name: 'Seat Leon', bild: { filename: '/images/Mietwagen Seat Leon.png' }, kategorie: 'Kompakt', preis_tag: '72 € / Tag' },
-  { name: 'Renault Master', bild: { filename: '/images/Mietwagen Renault Master.png' }, kategorie: 'Kastenwagen · Umzüge & Transporte', preis_tag: '140 € / Tag' },
+  { name: 'Seat Arona', bild: { filename: '/images/mietwagen seat arona.png' }, kategorie: 'SUV / Crossover', preis_tag: '79 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
+  { name: 'Seat Leon', bild: { filename: '/images/Mietwagen Seat Leon.png' }, kategorie: 'Kompakt', preis_tag: '72 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
+  { name: 'Renault Master', bild: { filename: '/images/Mietwagen Renault Master.png' }, kategorie: 'Kastenwagen · Umzüge & Transporte', preis_tag: '140 € / Tag', km_info: 'inkl. 100 km · je weiterer km 0,59 € · LR: 3,0 × 1,80 × 1,85 m' },
 ];
 
 try {
@@ -1700,6 +1700,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
           <div class="car-class">{car.kategorie}</div>
           <div class="car-name">{car.name}</div>
           <div class="car-price">{car.preis_tag}</div>
+          {car.km_info && <div class="car-km">{car.km_info}</div>}
         </div>
       </div>
     ))}
