@@ -1,13 +1,13 @@
 # AVAS Frankenberg
 
-> AVAS ist ein Pannen- und Abschleppdienst sowie eine Autovermietung in Frankenberg (Eder), Hessen, Deutschland. Betrieben von Ralf Schmidt. Vertragspartner von Assistance Partner, ACE, AvD, AXA, Allianz, LVM, ARCD und IMA.
+> AVAS ist ein Pannen- und Abschleppdienst sowie eine Autovermietung in Frankenberg (Eder), Hessen, Deutschland. Betrieben von Ralf Schmidt. Vertragspartner von Assistance Partner, ACE, AvD, LVM, ARCD, HLPY, ACV und TSE.
 
 ## Leistungen
 
 - **Abschleppdienst 24/7**: PKW-Abschleppung, Unfallbergung, Kurz- und Langstreckentransport, Versicherungsabwicklung. Rund um die Uhr, auch nachts und an Feiertagen.
 - **LKW-Abschleppung**: Spezialisiert auf schwere Nutzfahrzeuge, LKW, Busse und Sattelzüge. 3-Achser und 4-Achser Berger-LKW im Fuhrpark. Einsatz auf Autobahnen und Bundesstraßen.
 - **Pannenhilfe vor Ort**: Starthilfe, Reifenwechsel, Türöffnung, Kraftstoff-Notversorgung, Bergungsdienst, allgemeiner Pannendienst.
-- **Autovermietung**: Opel Corsa Klasse A (54 €/Tag), Seat Leon Klasse B (72 €/Tag), Seat Arona Klasse C (79 €/Tag). Jeweils inklusive 150 km, 0,49 €/km darüber. Werkstattersatz, Unfallersatz und freie Anmietung.
+- **Autovermietung**: Seat Arona SUV/Crossover (79 €/Tag, inkl. 150 km, 0,49 €/km), Seat Leon Kompakt (72 €/Tag, inkl. 150 km, 0,49 €/km), Renault Master Kastenwagen für Umzüge & Transporte (140 €/Tag, inkl. 100 km, 0,59 €/km, Lademaße 3,0 × 1,80 × 1,85 m). Werkstattersatz, Unfallersatz und freie Anmietung.
 - **Spedition & Transport**: Opel Vivaro, 850 kg Nutzlast, Kurierdienst, regional, bundesweit und europaweit.
 
 ## Standort & Kontakt
@@ -26,7 +26,7 @@ Schwerpunkt: Landkreis Waldeck-Frankenberg, Hessen. Überregionale und bundeswei
 
 ## Vertragspartner & Versicherungskooperationen
 
-Assistance Partner, ACE, AvD, VBA, AXA, Allianz, LVM, ARCD, IMA
+Assistance Partner, ACE, AvD, VBA, LVM, ARCD, HLPY, ACV, TSE
 
 ## Fuhrpark
 
