@@ -223,7 +223,7 @@ try {
     .hero-bg-img {
       position: absolute;
       inset: 0;
-      background-image: url('design_handoff_avas_onepager/uploads/hero.jpg');
+      background-image: url('/images/hero.jpg');
       background-size: cover;
       background-position: center 40%;
       filter: brightness(0.42) saturate(0.75);
@@ -1387,13 +1387,9 @@ try {
       <div class="hero-eyebrow-text">Autovermietung & Abschleppservice · Ralf Schmidt</div>
     </div>
     <h1 class="hero-h1">
-      Wenn es<br>
-      <em>drauf ankommt.</em>
+      <em>{cms.hero_heading}</em>
     </h1>
-    <p class="hero-sub">
-      Abschleppen, Bergen, Pannenhilfe, Spedition und Autovermietung.
-      Schnell, zuverlässig und bei Notfällen rund um die Uhr für Sie da.
-    </p>
+    <p class="hero-sub">{cms.hero_subtext}</p>
     <div class="hero-actions">
       <a href={`tel:${cms.phone_link}`} class="btn-primary">Notfall&nbsp;&middot;&nbsp;{cms.phone_display}</a>
       <a href="#kontakt" class="btn-outline">Nachricht senden</a>
