@@ -2,7 +2,7 @@
 import { useStoryblokApi } from '@storyblok/astro';
 
 // Fallback-Werte (Seite funktioniert auch ohne Storyblok-Verbindung)
-let cms = {
+let cms: any = {
   phone_display: '06451 / 24770',
   phone_link: '0645124770',
   fax: '06451 / 24772',
@@ -13,6 +13,32 @@ let cms = {
   buerozeiten: 'Mo bis Fr: 08:00 bis 17:00 Uhr',
 };
 
+const fallbackGalerie = [
+  { bild: { filename: '/images/Bildergalerie/1.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/2.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/3.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/4.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/5.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/6.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/7.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/8.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/9.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/10.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/11.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/12.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/13.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/14.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/15.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/16.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/Bildergalerie/17.png' }, beschriftung: 'AVAS Frankenberg' },
+];
+
+const fallbackMietwagen = [
+  { name: 'Seat Arona', bild: { filename: '/images/mietwagen seat arona.png' }, kategorie: 'SUV / Crossover', preis_tag: '79 € / Tag' },
+  { name: 'Seat Leon', bild: { filename: '/images/Mietwagen Seat Leon.png' }, kategorie: 'Kompakt', preis_tag: '72 € / Tag' },
+  { name: 'Renault Master', bild: { filename: '/images/Mietwagen Renault Master.png' }, kategorie: 'Kastenwagen · Umzüge & Transporte', preis_tag: '140 € / Tag' },
+];
+
 try {
   const storyblokApi = useStoryblokApi();
   const { data } = await storyblokApi.get('cdn/stories/home', {
@@ -22,6 +48,9 @@ try {
 } catch (e) {
   // Fallback aktiv – Storyblok nicht erreichbar oder Story noch nicht vorhanden
 }
+
+const galerie = cms.galerie?.length ? cms.galerie : fallbackGalerie;
+const mietwagen = cms.mietwagen_liste?.length ? cms.mietwagen_liste : fallbackMietwagen;
 ---
 <!DOCTYPE html>
 <html lang="de">
@@ -1662,39 +1691,18 @@ try {
   </div>
 
   <div class="car-grid">
-    <div class="car-card">
-      <div class="car-img">
-        <img src="/images/mietwagen seat arona.png" alt="Mietwagen Seat Arona – AVAS Frankenberg" loading="lazy" width="640" height="360">
+    {mietwagen.map((car: any) => (
+      <div class="car-card">
+        <div class="car-img">
+          <img src={car.bild?.filename} alt={`Mietwagen ${car.name} – AVAS Frankenberg`} loading="lazy" width="640" height="360">
+        </div>
+        <div class="car-info">
+          <div class="car-class">{car.kategorie}</div>
+          <div class="car-name">{car.name}</div>
+          <div class="car-price">{car.preis_tag}</div>
+        </div>
       </div>
-      <div class="car-info">
-        <div class="car-class">SUV / Crossover</div>
-        <div class="car-name">Seat Arona</div>
-        <div class="car-price">79 € <span>/ Tag</span></div>
-        <div class="car-km">inkl. 150 km &nbsp;·&nbsp; je weiterer km 0,49 €</div>
-      </div>
-    </div>
-    <div class="car-card">
-      <div class="car-img">
-        <img src="/images/Mietwagen Seat Leon.png" alt="Mietwagen Seat Leon – AVAS Frankenberg" loading="lazy" width="640" height="360">
-      </div>
-      <div class="car-info">
-        <div class="car-class">Kompakt</div>
-        <div class="car-name">Seat Leon</div>
-        <div class="car-price">72 € <span>/ Tag</span></div>
-        <div class="car-km">inkl. 150 km &nbsp;·&nbsp; je weiterer km 0,49 €</div>
-      </div>
-    </div>
-    <div class="car-card">
-      <div class="car-img">
-        <img src="/images/Mietwagen Renault Master.png" alt="Mietwagen Renault Master – AVAS Frankenberg" loading="lazy" width="640" height="360">
-      </div>
-      <div class="car-info">
-        <div class="car-class">Kastenwagen · Umzüge &amp; Transporte</div>
-        <div class="car-name">Renault Master</div>
-        <div class="car-price">140 € <span>/ Tag</span></div>
-        <div class="car-km">inkl. 100 km &nbsp;·&nbsp; je weiterer km 0,59 € &nbsp;·&nbsp; LR: 3,0 × 1,80 × 1,85 m</div>
-      </div>
-    </div>
+    ))}
   </div>
 
   <div style="margin-top:32px; text-align:center;">
@@ -1799,74 +1807,12 @@ try {
     </div>
   </div>
   <div class="gallery-strip" id="galleryStrip">
-    <div class="g-cell" data-index="0">
-      <img src="/images/Bildergalerie/1.jpeg" alt="AVAS Frankenberg Impression 1" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="1">
-      <img src="/images/Bildergalerie/2.png" alt="AVAS Frankenberg Impression 2" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="2">
-      <img src="/images/Bildergalerie/3.png" alt="AVAS Frankenberg Impression 3" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="3">
-      <img src="/images/Bildergalerie/4.png" alt="AVAS Frankenberg Impression 4" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="4">
-      <img src="/images/Bildergalerie/5.png" alt="AVAS Frankenberg Impression 5" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="5">
-      <img src="/images/Bildergalerie/6.png" alt="AVAS Frankenberg Impression 6" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="6">
-      <img src="/images/Bildergalerie/7.png" alt="AVAS Frankenberg Impression 7" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="7">
-      <img src="/images/Bildergalerie/8.png" alt="AVAS Frankenberg Impression 8" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="8">
-      <img src="/images/Bildergalerie/9.png" alt="AVAS Frankenberg Impression 9" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="9">
-      <img src="/images/Bildergalerie/10.png" alt="AVAS Frankenberg Impression 10" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="10">
-      <img src="/images/Bildergalerie/11.png" alt="AVAS Frankenberg Impression 11" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="11">
-      <img src="/images/Bildergalerie/12.png" alt="AVAS Frankenberg Impression 12" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="12">
-      <img src="/images/Bildergalerie/13.png" alt="AVAS Frankenberg Impression 13" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="13">
-      <img src="/images/Bildergalerie/14.png" alt="AVAS Frankenberg Impression 14" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="14">
-      <img src="/images/Bildergalerie/15.png" alt="AVAS Frankenberg Impression 15" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="15">
-      <img src="/images/Bildergalerie/16.png" alt="AVAS Frankenberg Impression 16" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
-    <div class="g-cell" data-index="16">
-      <img src="/images/Bildergalerie/17.png" alt="AVAS Frankenberg Impression 17" loading="lazy">
-      <div class="g-overlay"><div class="g-plus">+</div></div>
-    </div>
+    {galerie.map((item: any, i: number) => (
+      <div class="g-cell" data-index={i}>
+        <img src={item.bild?.filename} alt={item.beschriftung || `AVAS Frankenberg Impression ${i+1}`} loading="lazy">
+        <div class="g-overlay"><div class="g-plus">+</div></div>
+      </div>
+    ))}
   </div>
 
   <!-- Lightbox -->
