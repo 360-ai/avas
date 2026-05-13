@@ -1,5 +1,26 @@
 ---
-// Storyblok-Daten werden hier später geladen
+import { useStoryblokApi } from '@storyblok/astro';
+
+// Fallback-Werte (Seite funktioniert auch ohne Storyblok-Verbindung)
+let cms = {
+  phone_display: '06451 / 24770',
+  phone_link: '0645124770',
+  fax: '06451 / 24772',
+  email: 'avas.ralf-schmidt@t-online.de',
+  hero_heading: 'Wenn es drauf ankommt.',
+  hero_subtext: 'Abschleppen, Bergen, Pannenhilfe, Spedition und Autovermietung. Schnell, zuverlässig und bei Notfällen rund um die Uhr für Sie da.',
+  buerozeiten: 'Mo bis Fr: 08:00 bis 17:00 Uhr',
+};
+
+try {
+  const storyblokApi = useStoryblokApi();
+  const { data } = await storyblokApi.get('cdn/stories/home', {
+    version: 'published',
+  });
+  cms = { ...cms, ...data.story.content };
+} catch (e) {
+  // Fallback aktiv – Storyblok nicht erreichbar oder Story noch nicht vorhanden
+}
 ---
 <!DOCTYPE html>
 <html lang="de">
@@ -1347,7 +1368,7 @@
   <div class="nav-right">
     <a href="tel:0645124770" class="emergency-badge">
       <div class="pulse-dot"></div>
-      06451 / 24770
+      {cms.phone_display}
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
@@ -1374,7 +1395,7 @@
       Schnell, zuverlässig und bei Notfällen rund um die Uhr für Sie da.
     </p>
     <div class="hero-actions">
-      <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+      <a href={`tel:${cms.phone_link}`} class="btn-primary">Notfall&nbsp;&middot;&nbsp;{cms.phone_display}</a>
       <a href="#kontakt" class="btn-outline">Nachricht senden</a>
       <a href="https://www.instagram.com/ralfschmidt82/" target="_blank" rel="noopener noreferrer" class="btn-instagram">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1531,7 +1552,7 @@
         </div>
       </div>
       <div style="margin-top: 32px;">
-        <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+        <a href={`tel:${cms.phone_link}`} class="btn-primary">Notfall&nbsp;&middot;&nbsp;{cms.phone_display}</a>
       </div>
     </div>
   </div>
@@ -1554,7 +1575,7 @@
         Wir sind Vertragspartner von Assistance Partner, ACE, AvD, LVM, ARCD, HLPY, ACV und TSE. Die Abrechnung läuft direkt über Ihren Anbieter.
       </p>
       <div style="margin-top: 28px;">
-        <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+        <a href={`tel:${cms.phone_link}`} class="btn-primary">Notfall&nbsp;&middot;&nbsp;{cms.phone_display}</a>
       </div>
     </div>
     <div>
@@ -1613,7 +1634,7 @@
         </div>
       </div>
       <div style="margin-top:32px;">
-        <a href="tel:0645124770" class="btn-primary">Notfall&nbsp;&middot;&nbsp;06451 / 24770</a>
+        <a href={`tel:${cms.phone_link}`} class="btn-primary">Notfall&nbsp;&middot;&nbsp;{cms.phone_display}</a>
       </div>
     </div>
   </div>
@@ -1945,7 +1966,7 @@
     <div class="info-block">
       <div class="info-item">
         <div class="info-key">Notfall und Abschleppung, 24/7</div>
-        <a href="tel:0645124770" class="phone-big">06451 / 24770</a>
+        <a href={`tel:${cms.phone_link}`} class="phone-big">{cms.phone_display}</a>
         <div style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">Bei Notfällen rund um die Uhr erreichbar. 7 Tage die Woche.</div>
       </div>
       <div class="info-item">
@@ -1954,7 +1975,7 @@
       </div>
       <div class="info-item">
         <div class="info-key">E-Mail</div>
-        <div class="info-val"><a href="mailto:avas.ralf-schmidt@t-online.de">avas.ralf-schmidt@t-online.de</a></div>
+        <div class="info-val"><a href={`mailto:${cms.email}`}>{cms.email}</a></div>
       </div>
       <div class="info-item">
         <div class="info-key">Adresse</div>
@@ -1966,7 +1987,7 @@
       </div>
       <div class="info-item">
         <div class="info-key">Bürozeiten</div>
-        <div class="info-val">Mo bis Fr: 08:00 bis 17:00 Uhr<br><span style="color:var(--yellow); font-size:0.88rem; font-weight:500;">Abschleppung: 24 Stunden, 7 Tage</span></div>
+        <div class="info-val">{cms.buerozeiten}<br><span style="color:var(--yellow); font-size:0.88rem; font-weight:500;">Abschleppung: 24 Stunden, 7 Tage</span></div>
       </div>
     </div>
   </div>
