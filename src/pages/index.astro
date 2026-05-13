@@ -49,8 +49,8 @@ try {
   // Fallback aktiv – Storyblok nicht erreichbar oder Story noch nicht vorhanden
 }
 
-const galerie = cms.galerie?.length ? cms.galerie : fallbackGalerie;
-const mietwagen = cms.mietwagen_liste?.length ? cms.mietwagen_liste : fallbackMietwagen;
+const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.galerie : fallbackGalerie;
+const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.length > 0) ? cms.mietwagen_liste : fallbackMietwagen;
 ---
 <!DOCTYPE html>
 <html lang="de">
