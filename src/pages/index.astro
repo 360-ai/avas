@@ -58,22 +58,25 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- TODO: Domain-Platzhalter "https://www.avas-frankenberg.de" vor Hosting durch echte Domain ersetzen -->
-
   <!-- Primäre Meta Tags -->
   <title>AVAS Frankenberg – Abschleppdienst, Pannenhilfe &amp; Autovermietung 24/7</title>
   <meta name="description" content="AVAS Frankenberg: 24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe &amp; Mietwagen (SEAT, Renault). Ralf Schmidt, Berleburger Str. 12, 35066 Frankenberg. ☎ 06451 / 24770">
-  <meta name="keywords" content="Abschleppdienst Frankenberg, Pannenhilfe Frankenberg, Autovermietung Frankenberg Eder, LKW Bergung Hessen, Abschleppservice 24h, Pannendienst Waldeck-Frankenberg, AVAS Ralf Schmidt">
   <meta name="robots" content="index, follow">
   <meta name="author" content="AVAS – Ralf Schmidt, Frankenberg">
   <link rel="canonical" href="https://www.avas-frankenberg.de/">
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="DE-HE">
+  <meta name="geo.placename" content="Frankenberg (Eder)">
+  <meta name="geo.position" content="51.0602;8.7977">
+  <meta name="ICBM" content="51.0602, 8.7977">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AVAS Frankenberg – Abschleppdienst &amp; Autovermietung 24/7">
   <meta property="og:description" content="24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe &amp; Mietwagen in Frankenberg (Eder). Ralf Schmidt. ☎ 06451 / 24770">
   <meta property="og:url" content="https://www.avas-frankenberg.de/">
-  <meta property="og:image" content="https://www.avas-frankenberg.de/design_handoff_avas_onepager/uploads/1483036116-d8321340.jpg">
+  <meta property="og:image" content="https://www.avas-frankenberg.de/images/1483036116-d8321340.jpg">
   <meta property="og:locale" content="de_DE">
   <meta property="og:site_name" content="AVAS Frankenberg">
 
@@ -81,26 +84,16 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="AVAS Frankenberg – Abschleppdienst &amp; Autovermietung 24/7">
   <meta name="twitter:description" content="24/7 Pannenhilfe &amp; Abschleppservice in Frankenberg (Eder). ☎ 06451 / 24770">
-  <meta name="twitter:image" content="https://www.avas-frankenberg.de/design_handoff_avas_onepager/uploads/1483036116-d8321340.jpg">
+  <meta name="twitter:image" content="https://www.avas-frankenberg.de/images/1483036116-d8321340.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" href="/images/avas logo.png" type="image/jpeg">
+  <link rel="icon" href="/images/avas logo.png" type="image/png">
   <link rel="apple-touch-icon" href="/images/avas logo.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- GA4 (TODO: G-XXXXXXXXXX durch echte Measurement ID ersetzen + Cookie-Banner ergänzen)
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1225,6 +1218,8 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
       .fuhrpark-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
+      .emergency-badge { padding: 5px 10px; font-size: 0.68rem; gap: 5px; }
+      .emergency-badge .eb-text { display: none; }
       footer { flex-direction: column; align-items: flex-start; }
       .form-row { grid-template-columns: 1fr; }
     }
@@ -1240,7 +1235,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
     "legalName": "AVAS Frankenberg, Inh. Ralf Schmidt",
     "description": "AVAS Frankenberg bietet 24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe, Autovermietung und Speditionsfahrten in Frankenberg (Eder) und Umgebung.",
     "url": "https://www.avas-frankenberg.de/",
-    "telephone": "+4964512477",
+    "telephone": "+49645124770",
     "faxNumber": "+49645124772",
     "email": "avas.ralf-schmidt@t-online.de",
     "address": {
@@ -1248,6 +1243,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
       "streetAddress": "Berleburger Str. 12",
       "addressLocality": "Frankenberg (Eder)",
       "postalCode": "35066",
+      "addressRegion": "Hessen",
       "addressCountry": "DE"
     },
     "geo": {
@@ -1396,9 +1392,9 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
     <li><a href="#kontakt">Kontakt</a></li>
   </ul>
   <div class="nav-right">
-    <a href="tel:0645124770" class="emergency-badge">
+    <a href={`tel:${cms.phone_link}`} class="emergency-badge">
       <div class="pulse-dot"></div>
-      {cms.phone_display}
+      <span class="eb-text">{cms.phone_display}</span>
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
       <span></span><span></span><span></span>
@@ -1810,7 +1806,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
   <div class="gallery-strip" id="galleryStrip">
     {galerie.map((item: any, i: number) => (
       <div class="g-cell" data-index={i}>
-        <img src={item.bild?.filename} alt={item.beschriftung || `AVAS Frankenberg Impression ${i+1}`} loading="lazy">
+        <img src={item.bild?.filename} alt={item.beschriftung || `AVAS Frankenberg Impression ${i+1}`} loading="lazy" width="800" height="600">
         <div class="g-overlay"><div class="g-plus">+</div></div>
       </div>
     ))}
@@ -1916,7 +1912,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
       </div>
       <div class="info-item">
         <div class="info-key">Fax</div>
-        <div class="info-val">06451 / 24772</div>
+        <div class="info-val">{cms.fax}</div>
       </div>
       <div class="info-item">
         <div class="info-key">E-Mail</div>
@@ -1939,7 +1935,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
 
   <div class="kontakt-form">
     <div class="form-title">Nachricht senden</div>
-    <form id="contact-form" novalidate>
+    <form id="contact-form" data-email={cms.email} novalidate>
       <div class="form-row">
         <div class="form-group">
           <label for="vorname">Vorname</label>
@@ -2001,8 +1997,8 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
   </div>
   <div class="footer-copy">© 2026 AVAS · Ralf Schmidt · Berleburger Str. 12 · 35066 Frankenberg (Eder)</div>
   <ul class="footer-links">
-    <li><a href="impressum.html">Impressum</a></li>
-    <li><a href="datenschutz.html">Datenschutz</a></li>
+    <li><a href="/impressum/">Impressum</a></li>
+    <li><a href="/datenschutz/">Datenschutz</a></li>
   </ul>
 </footer>
 
@@ -2048,7 +2044,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
            + nachricht;
 
   var btn = document.getElementById('form-submit');
-  window.location.href = 'mailto:avas.ralf-schmidt@t-online.de'
+  var formEmail = document.getElementById('contact-form').getAttribute('data-email');
+  window.location.href = 'mailto:' + formEmail
     + '?subject=' + encodeURIComponent(betreff)
     + '&body=' + encodeURIComponent(body);
 
