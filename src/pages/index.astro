@@ -201,6 +201,8 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
       color: #fff;
       transition: background 0.2s;
     }
+    .eb-icon { display: none; }
+    }
     .emergency-badge:hover { background: var(--red-bright); }
 
     .pulse-dot {
@@ -1218,8 +1220,9 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
       .fuhrpark-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .nav-toggle { display: flex; }
-      .emergency-badge { padding: 5px 10px; font-size: 0.68rem; gap: 5px; }
+      .emergency-badge { padding: 6px 12px; font-size: 0.68rem; gap: 6px; }
       .emergency-badge .eb-text { display: none; }
+      .emergency-badge .eb-icon { display: block; }
       footer { flex-direction: column; align-items: flex-start; }
       .form-row { grid-template-columns: 1fr; }
     }
@@ -1394,6 +1397,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
   <div class="nav-right">
     <a href={`tel:${cms.phone_link}`} class="emergency-badge">
       <div class="pulse-dot"></div>
+      <svg class="eb-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.72 11.72 0 003.66.59 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.66 1 1 0 01-.25 1.02l-2.22 2.11z"/></svg>
       <span class="eb-text">{cms.phone_display}</span>
     </a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menü öffnen">
