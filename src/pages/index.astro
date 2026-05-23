@@ -1,8 +1,6 @@
 ---
-import { useStoryblokApi } from '@storyblok/astro';
-
-// Fallback-Werte (Seite funktioniert auch ohne Storyblok-Verbindung)
-let cms: any = {
+// Storyblok deaktiviert – wird später wieder eingerichtet
+const cms: any = {
   phone_display: '06451 / 24770',
   phone_link: '0645124770',
   fax: '06451 / 24772',
@@ -52,18 +50,8 @@ const fallbackMietwagen = [
   { name: 'Renault Master', bild: { filename: '/images/Mietwagen Renault Master.png' }, kategorie: 'Kastenwagen · Umzüge & Transporte', preis_tag: '140 € / Tag', km_info: 'inkl. 100 km · je weiterer km 0,59 € · LR: 3,0 × 1,80 × 1,85 m' },
 ];
 
-try {
-  const storyblokApi = useStoryblokApi();
-  const { data } = await storyblokApi.get('cdn/stories/home', {
-    version: 'published',
-  });
-  cms = { ...cms, ...data.story.content };
-} catch (e) {
-  // Fallback aktiv – Storyblok nicht erreichbar oder Story noch nicht vorhanden
-}
-
-const galerie = (Array.isArray(cms.galerie) && cms.galerie.length > 0) ? cms.galerie : fallbackGalerie;
-const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.length > 0) ? cms.mietwagen_liste : fallbackMietwagen;
+const galerie = fallbackGalerie;
+const mietwagen = fallbackMietwagen;
 ---
 <!DOCTYPE html>
 <html lang="de">
