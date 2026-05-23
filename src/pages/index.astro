@@ -10,32 +10,45 @@ let cms: any = {
   hero_line1: 'Wenn es',
   hero_line2: 'drauf ankommt.',
   hero_subtext: 'Abschleppen, Bergen, Pannenhilfe, Spedition und Autovermietung. Schnell, zuverlässig und bei Notfällen rund um die Uhr für Sie da.',
-  buerozeiten: 'Mo bis Fr: 08:00 bis 17:00 Uhr',
+  buerozeiten: 'Mo bis Fr: 08:00 – 12:00 Uhr und 13:15 – 17:00 Uhr',
 };
 
 const fallbackGalerie = [
-  { bild: { filename: '/images/Bildergalerie/1.jpeg' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/2.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/3.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/4.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/5.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/6.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/7.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/8.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/9.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/10.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/11.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/12.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/13.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/14.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/15.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/16.png' }, beschriftung: 'AVAS Frankenberg' },
-  { bild: { filename: '/images/Bildergalerie/17.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas29.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas23.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas28.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/1.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/2.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/3.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/4.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/5.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/6.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/7.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/8.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/9.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/11.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/12.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/13.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/14.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/15.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/16.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/17.png' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas20.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas21.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas22.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas24.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas25.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas26.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas27.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas30.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas31.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas32.jpeg' }, beschriftung: 'AVAS Frankenberg' },
+  { bild: { filename: '/images/galerie/avas33.jpeg' }, beschriftung: 'AVAS Frankenberg' },
 ];
 
 const fallbackMietwagen = [
   { name: 'Seat Arona', bild: { filename: '/images/mietwagen seat arona.png' }, kategorie: 'SUV / Crossover', preis_tag: '79 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
-  { name: 'Seat Leon', bild: { filename: '/images/Mietwagen Seat Leon.png' }, kategorie: 'Kompakt', preis_tag: '72 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
+  { name: 'Seat Leon', bild: { filename: '/images/seat-leon-neu.jpeg' }, kategorie: 'Kompakt', preis_tag: '72 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
   { name: 'Renault Master', bild: { filename: '/images/Mietwagen Renault Master.png' }, kategorie: 'Kastenwagen · Umzüge & Transporte', preis_tag: '140 € / Tag', km_info: 'inkl. 100 km · je weiterer km 0,59 € · LR: 3,0 × 1,80 × 1,85 m' },
 ];
 
@@ -1258,6 +1271,12 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
         "opens": "08:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "13:15",
         "closes": "17:00"
       }
     ],
@@ -1714,7 +1733,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
 <section id="spedition" style="background: var(--black);">
   <div class="photo-split">
     <div class="photo-frame aspect-4-3">
-      <img src="/images/Spedition Opel Vivaro.png" alt="Speditionsfahrzeug Opel Vivaro – AVAS Frankenberg" loading="lazy" width="640" height="480">
+      <img src="/images/opel-vivaro-neu.jpeg" alt="Speditionsfahrzeug Opel Vivaro – AVAS Frankenberg" loading="lazy" width="640" height="480">
     </div>
     <div>
       <div class="eyebrow">
@@ -1785,7 +1804,7 @@ const mietwagen = (Array.isArray(cms.mietwagen_liste) && cms.mietwagen_liste.len
     </div>
     <div class="fp-card">
       <div class="fp-img">
-        <img src="/images/Spedition Opel Vivaro.png" alt="Speditionsfahrzeug Opel Vivaro AVAS" loading="lazy" width="400" height="300">
+        <img src="/images/opel-vivaro-neu.jpeg" alt="Speditionsfahrzeug Opel Vivaro AVAS" loading="lazy" width="400" height="300">
       </div>
       <div class="fp-info">
         <div class="fp-name">Speditionsfahrzeug</div>
