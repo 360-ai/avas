@@ -684,20 +684,11 @@ const mietwagen = fallbackMietwagen;
 
     /* ── MIETWAGEN ── */
     #mietwagen { background: var(--surface); }
-    .mietwagen-header {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: end;
-      margin-bottom: 56px;
-    }
     .car-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
-      max-width: 760px;
-      margin: 0 auto;
     }
     .car-card {
       background: var(--surface2);
@@ -1192,7 +1183,6 @@ const mietwagen = fallbackMietwagen;
       .photo-split.reverse > *:last-child { order: -1; }
       #kontakt { grid-template-columns: 1fr; gap: 48px; }
       .panne-grid { grid-template-columns: repeat(2, 1fr); }
-      .mietwagen-header { grid-template-columns: 1fr; gap: 28px; }
       .car-grid { grid-template-columns: repeat(2, 1fr); }
       .fuhrpark-grid { grid-template-columns: repeat(2, 1fr); }
       footer { padding: 32px 28px; }
@@ -1677,15 +1667,13 @@ const mietwagen = fallbackMietwagen;
 
 <!-- MIETWAGEN -->
 <section id="mietwagen">
-  <div class="mietwagen-header">
+  <div class="photo-split reverse">
     <div>
       <div class="eyebrow">
         <div class="eyebrow-line"></div>
         <div class="eyebrow-text">04 — Autovermietung</div>
       </div>
       <h2 class="sec-title">Mietwagen<br><em>für jeden<br>Anlass.</em></h2>
-    </div>
-    <div>
       <p class="sec-body">
         Kurzfristig nach einem Unfall oder geplant für ein Wochenende: Wir haben das passende Fahrzeug. Vom Kompaktwagen bis zum SUV für den Alltag. Werkstattersatz, Unfallersatz oder einfach mieten. Direkt bei AVAS in Frankenberg.
       </p>
@@ -1695,27 +1683,27 @@ const mietwagen = fallbackMietwagen;
         <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Freie Anmietung</span>
         <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">· Seat ·</span>
       </div>
-    </div>
-  </div>
-
-  <div class="car-grid">
-    {mietwagen.map((car: any) => (
-      <div class="car-card">
-        <div class="car-img">
-          <img src={car.bild?.filename} alt={`Mietwagen ${car.name} – AVAS Frankenberg`} loading="lazy" width="640" height="360">
-        </div>
-        <div class="car-info">
-          <div class="car-class">{car.kategorie}</div>
-          <div class="car-name">{car.name}</div>
-          <div class="car-price">{car.preis_tag}</div>
-          {car.km_info && <div class="car-km">{car.km_info}</div>}
-        </div>
+      <div style="margin-top: 28px;">
+        <a href="#kontakt" class="btn-primary">Fahrzeug anfragen</a>
       </div>
-    ))}
-  </div>
-
-  <div style="margin-top:32px; text-align:center;">
-    <a href="#kontakt" class="btn-primary">Fahrzeug anfragen</a>
+    </div>
+    <div>
+      <div class="car-grid">
+        {mietwagen.map((car: any) => (
+          <div class="car-card">
+            <div class="car-img">
+              <img src={car.bild?.filename} alt={`Mietwagen ${car.name} – AVAS Frankenberg`} loading="lazy" width="640" height="360">
+            </div>
+            <div class="car-info">
+              <div class="car-class">{car.kategorie}</div>
+              <div class="car-name">{car.name}</div>
+              <div class="car-price">{car.preis_tag}</div>
+              {car.km_info && <div class="car-km">{car.km_info}</div>}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   </div>
 </section>
 
