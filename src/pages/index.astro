@@ -47,7 +47,6 @@ const fallbackGalerie = [
 const fallbackMietwagen = [
   { name: 'Seat Arona', bild: { filename: '/images/mietwagen seat arona.png' }, kategorie: 'SUV / Crossover', preis_tag: '79 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
   { name: 'Seat Leon', bild: { filename: '/images/seat-leon-neu.jpeg' }, kategorie: 'Kompakt', preis_tag: '72 € / Tag', km_info: 'inkl. 150 km · je weiterer km 0,49 €' },
-  { name: 'Renault Master', bild: { filename: '/images/Mietwagen Renault Master.png' }, kategorie: 'Kastenwagen · Umzüge & Transporte', preis_tag: '140 € / Tag', km_info: 'inkl. 100 km · je weiterer km 0,59 € · LR: 3,0 × 1,80 × 1,85 m' },
 ];
 
 const galerie = fallbackGalerie;
@@ -61,7 +60,7 @@ const mietwagen = fallbackMietwagen;
 
   <!-- Primäre Meta Tags -->
   <title>AVAS Frankenberg – Abschleppdienst, Pannenhilfe &amp; Autovermietung 24/7</title>
-  <meta name="description" content="AVAS Frankenberg: 24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe &amp; Mietwagen (SEAT, Renault). Ralf Schmidt, Berleburger Str. 12, 35066 Frankenberg. ☎ 06451 / 24770">
+  <meta name="description" content="AVAS Frankenberg: 24/7 Abschleppdienst, LKW-Bergung, Pannenhilfe &amp; Mietwagen (SEAT). Ralf Schmidt, Berleburger Str. 12, 35066 Frankenberg. ☎ 06451 / 24770">
   <meta name="robots" content="index, follow">
   <meta name="author" content="AVAS – Ralf Schmidt, Frankenberg">
   <link rel="canonical" href="https://www.avas-frankenberg.de/">
@@ -694,9 +693,11 @@ const mietwagen = fallbackMietwagen;
     }
     .car-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--border);
+      max-width: 760px;
+      margin: 0 auto;
     }
     .car-card {
       background: var(--surface2);
@@ -1286,7 +1287,7 @@ const mietwagen = fallbackMietwagen;
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Abschleppdienst 24/7"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "LKW-Bergung"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pannenhilfe"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Autovermietung SEAT & Renault"}},
+        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Autovermietung SEAT"}},
         {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spedition & Transport"}}
       ]
     },
@@ -1313,7 +1314,7 @@ const mietwagen = fallbackMietwagen;
         "name": "Welche Mietwagen hat AVAS in Frankenberg?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "AVAS Frankenberg bietet drei Fahrzeuge zur Miete: Seat Arona (SUV/Crossover, 79 € / Tag), Seat Leon (Kompakt, 72 € / Tag) und Renault Master Kastenwagen für Umzüge und Transporte (140 € / Tag). Seat-Fahrzeuge inklusive 150 km (0,49 €/km), Renault Master inklusive 100 km (0,59 €/km). Lademaße Master: 3,0 × 1,80 × 1,85 m. Werkstattersatz und Unfallersatz möglich."
+          "text": "AVAS Frankenberg bietet zwei Fahrzeuge zur Miete: Seat Arona (SUV/Crossover, 79 € / Tag) und Seat Leon (Kompakt, 72 € / Tag). Beide Fahrzeuge inklusive 150 km, je weiterer km 0,49 €. Werkstattersatz und Unfallersatz möglich."
         }
       },
       {
@@ -1453,7 +1454,7 @@ const mietwagen = fallbackMietwagen;
     <div class="stat-divider"></div>
     <div class="stat">
       <div class="stat-num">Mietwagen</div>
-      <div class="stat-label">SEAT &amp; RENAULT</div>
+      <div class="stat-label">SEAT ARONA &amp; LEON</div>
     </div>
   </div>
 </section>
@@ -1686,13 +1687,13 @@ const mietwagen = fallbackMietwagen;
     </div>
     <div>
       <p class="sec-body">
-        Kurzfristig nach einem Unfall oder geplant für ein Wochenende: Wir haben das passende Fahrzeug. Vom Kompaktwagen für den Alltag bis zum großen Kastenwagen für Umzüge und Transporte. Werkstattersatz, Unfallersatz oder einfach mieten. Direkt bei AVAS in Frankenberg.
+        Kurzfristig nach einem Unfall oder geplant für ein Wochenende: Wir haben das passende Fahrzeug. Vom Kompaktwagen bis zum SUV für den Alltag. Werkstattersatz, Unfallersatz oder einfach mieten. Direkt bei AVAS in Frankenberg.
       </p>
       <div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:20px;">
         <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Werkstattersatz</span>
         <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Unfallersatz</span>
         <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">Freie Anmietung</span>
-        <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">· Seat &amp; Renault ·</span>
+        <span class="car-tag" style="padding:5px 12px; font-size:0.78rem;">· Seat ·</span>
       </div>
     </div>
   </div>
@@ -1886,7 +1887,7 @@ const mietwagen = fallbackMietwagen;
     </div>
     <div class="faq-item">
       <div class="faq-q">Welche Mietwagen hat AVAS in Frankenberg?</div>
-      <div class="faq-a">Seat Arona (SUV/Crossover, 79 €/Tag), Seat Leon (Kompakt, 72 €/Tag) und Renault Master Kastenwagen für Umzüge &amp; Transporte (140 €/Tag). Seat-Fahrzeuge inkl. 150 km (0,49 €/km), Renault Master inkl. 100 km (0,59 €/km). Werkstattersatz und Unfallersatz möglich.</div>
+      <div class="faq-a">Seat Arona (SUV/Crossover, 79 €/Tag) und Seat Leon (Kompakt, 72 €/Tag). Inkl. 150 km, je weiterer km 0,49 €. Werkstattersatz und Unfallersatz möglich.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Kann AVAS auch LKW abschleppen?</div>
